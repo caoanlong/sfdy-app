@@ -12,14 +12,14 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Jyav: {
             screens: {
-              TabOneScreen: 'one',
+              JyavScreen: 'one',
             },
           },
-          TabTwo: {
+          Fenglou: {
             screens: {
-              TabTwoScreen: 'two',
+              FenglouScreen: 'two',
             },
           },
         },

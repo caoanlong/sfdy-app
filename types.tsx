@@ -9,14 +9,19 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  jyav: undefined;
+  fenglou: undefined;
+  shenshi: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type JyavParamList = {
+  JyavScreen: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type FenglouParamList = {
+  FenglouScreen: undefined;
+};
+
+export type ShenshiParamList = {
+  ShenshiScreen: undefined;
 };

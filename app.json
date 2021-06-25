@@ -3,6 +3,7 @@
     "name": "sfdy-app",
     "slug": "sfdy-app",
     "version": "1.0.0",
+    "sdkVersion": "41.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -19,9 +20,13 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.dragon.sfdy",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.dragon.sfdy",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"

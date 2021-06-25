@@ -10,9 +10,10 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import JyavScreen from '../screens/JyavScreen';
+import FenglouScreen from '../screens/FenglouScreen';
+import { BottomTabParamList, JyavParamList, FenglouParamList, ShenshiParamList } from '../types';
+import ShenshiScreen from '../screens/ShenshiScreen';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -21,20 +22,30 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="jyav"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="jyav"
+        component={JyavNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarLabel: '巨硬AV',
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-videocam" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="fenglou"
+        component={FenglouNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarLabel: '上林仙馆',
+          tabBarIcon: ({ color }) => <TabBarIcon name="cube" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="shenshi"
+        component={ShenshiNavigator}
+        options={{
+          tabBarLabel: '绅士之家',
+          tabBarIcon: ({ color }) => <TabBarIcon name="people" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -44,35 +55,48 @@ export default function BottomTabNavigator() {
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <Ionicons size={24} style={{ marginBottom: -3 }} {...props} />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const JyavStack = createStackNavigator<JyavParamList>();
 
-function TabOneNavigator() {
+function JyavNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+    <JyavStack.Navigator>
+      <JyavStack.Screen
+        name="JyavScreen"
+        component={JyavScreen}
+        options={{ headerTitle: '巨硬AV' }}
       />
-    </TabOneStack.Navigator>
+    </JyavStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const FenglouStack = createStackNavigator<FenglouParamList>();
 
-function TabTwoNavigator() {
+function FenglouNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+    <FenglouStack.Navigator>
+      <FenglouStack.Screen
+        name="FenglouScreen"
+        component={FenglouScreen}
+        options={{ headerTitle: '上林仙馆' }}
       />
-    </TabTwoStack.Navigator>
+    </FenglouStack.Navigator>
+  );
+}
+const ShenshiStack = createStackNavigator<ShenshiParamList>();
+
+function ShenshiNavigator() {
+  return (
+    <ShenshiStack.Navigator>
+      <ShenshiStack.Screen
+        name="ShenshiScreen"
+        component={ShenshiScreen}
+        options={{ headerTitle: '绅士之家' }}
+      />
+    </ShenshiStack.Navigator>
   );
 }
